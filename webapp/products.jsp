@@ -1,4 +1,4 @@
-<%@page import="com.market.ProductRepository"%>
+<%@page import="com.market.DBConnection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.Connection"%>
@@ -21,12 +21,16 @@
 		</div>
 	</div>
 	<%
-		ProductRepository repo = new ProductRepository(getServletConfig());
-		ArrayList<Product> listOfProducts = repo.getAllProducts();
-	%>
+		DBConnection con = new DBConnection();
+		ArrayList<Product> listOfProducts = new ArrayList<Product>();
+		
+		con.StartConnection(getServletConfig());
+		listOfProducts = con.GetAllProduct();
+		con.CloseConnection();
+	%> 
 	<div class="container">
 		<div class="row" align="center">
-			<%for(int i = 0; i < listOfProducts.size(); i++) {
+			<% for(int i = 0; i < listOfProducts.size(); i++) {
 				Product item = listOfProducts.get(i); 		%>
 			<div class="col-md-4">
 				<h3><%=item.getName() %></h3>
@@ -37,6 +41,7 @@
 		</div>
 		<hr >
 	</div>
+	
 	<jsp:include page="footer.jsp" />
 </body>
 </html>

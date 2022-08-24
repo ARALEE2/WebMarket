@@ -18,12 +18,12 @@ public class ApplicationConfig implements ServletContextListener {
 		hikariConfig.setUsername("root");
 		hikariConfig.setPassword("1234");
 		
-		// ÀÌÈÄ Ãß°¡¿É¼Ç
+		// ì´í›„ ì¶”ê°€ì˜µì…˜
 		hikariConfig.setConnectionTestQuery("select now() from dual");
 		hikariConfig.setMaximumPoolSize(3);
 		hikariConfig.setPoolName("Mariadb-HikariCP");
 
-		// ÇÏ³ªÀÇ CP
+		// í•˜ë‚˜ì˜ CP
 		HikariDataSource ds = new HikariDataSource(hikariConfig);
 		sce.getServletContext().setAttribute("dataSource", ds);
 	}

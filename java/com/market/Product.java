@@ -5,13 +5,13 @@ public class Product implements Serializable {
 	
 	private static final long serialVersionUID = -4274700572038677000L;
 	
-	private Integer code;		// »óÇ° ÄÚµå
-	private String name;		// »óÇ°¸í
-	private String company;		// Á¦Á¶»ç
-	private Integer price;		// »óÇ° °¡°İ
-	private Integer stock;		// Àç°í ¼ö
-	private String description;	// »óÇ° ¼³¸í
-	private String image;		// ÀÌ¹ÌÁö ÆÄÀÏÀÇ ÀÌ¸§(?)
+	private Integer code;		// ìƒí’ˆ ì½”ë“œ
+	private String name;		// ìƒí’ˆëª…
+	private String company;		// ì œì¡°ì‚¬
+	private Integer price;		// ìƒí’ˆ ê°€ê²©
+	private Integer stock;		// ì¬ê³  ìˆ˜
+	private String description;	// ìƒí’ˆ ì„¤ëª…
+	private String image;		// ì´ë¯¸ì§€ íŒŒì¼ì˜ ì´ë¦„(?)
 	
 	public Product() { super(); }
 
@@ -34,7 +34,7 @@ public class Product implements Serializable {
 		this.image = pImage;
 	}
 
-	/* ½Ã¸®¾ó~À» Á¦¿ÜÇÑ ¸ğµç º¯¼öÀÇ get, set ÇÔ¼ö¸¦ Ãß°¡ */
+	/* ì‹œë¦¬ì–¼~ì„ ì œì™¸í•œ ëª¨ë“  ë³€ìˆ˜ì˜ get, set í•¨ìˆ˜ë¥¼ ì¶”ê°€ */
 	// [Source]-[Generate Getters and Setters...]
 	public Integer getCode() {
 		return code;
